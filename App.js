@@ -14,7 +14,11 @@ export default function App() {
           component={WelcomePage}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="GetStarted" component={GetStarted} />
+        <Stack.Screen
+          name="GetStarted"
+          component={GetStarted}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -33,7 +33,7 @@ export default function WelcomePage({ navigation }) {
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "white",
   },
   textButton: {
     display: "flex",
