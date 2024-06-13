@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 const { width, height } = Dimensions.get("window");
-export default function WelcomePage() {
+export default function WelcomePage({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
@@ -21,7 +21,10 @@ export default function WelcomePage() {
           Browser through all categories and shop the best furniture for your
           dream house
         </Text>
-        <Pressable style={styles.button}>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate("GetStarted")}
+        >
           <Text style={styles.buttonText}>Get Started</Text>
         </Pressable>
       </View>
