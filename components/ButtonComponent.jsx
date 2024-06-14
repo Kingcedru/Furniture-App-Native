@@ -1,7 +1,13 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import React from "react";
 
-export default function ButtonComponent({ text, color, textColor }) {
+export default function ButtonComponent({
+  text,
+  color,
+  textColor,
+  navigation,
+  url,
+}) {
   return (
     <View>
       <Pressable
@@ -13,6 +19,7 @@ export default function ButtonComponent({ text, color, textColor }) {
           borderStyle: "solid",
           borderRadius: 10,
         }}
+        onPress={() => navigation.navigate(url)}
       >
         <Text
           style={{

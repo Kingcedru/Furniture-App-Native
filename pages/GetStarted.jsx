@@ -2,7 +2,7 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
 import ButtonComponent from "../components/ButtonComponent";
 
-export default function GetStarted() {
+export default function GetStarted({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
@@ -22,7 +22,13 @@ export default function GetStarted() {
           color="lightgreen"
           textColor="white"
         />
-        <ButtonComponent text="Login" color="white" textColor="lightgreen" />
+        <ButtonComponent
+          text="Login"
+          color="white"
+          textColor="lightgreen"
+          url="Login"
+          navigation={navigation}
+        />
       </View>
     </View>
   );
