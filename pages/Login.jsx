@@ -1,8 +1,11 @@
 import { View, Text, Image, StyleSheet, TextInput } from "react-native";
 import React from "react";
 import ButtonComponent from "../components/ButtonComponent";
+import InputField from "../components/InputField";
 
 export default function Login() {
+  const lock = require("../assets/icons/lock.png");
+  const email = require("../assets/icons/email.png");
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -16,44 +19,33 @@ export default function Login() {
         <Text style={styles.title}>Login</Text>
       </View>
       <View style={styles.form}>
-        <View>
-          <Text style={styles.label}>Email</Text>
-          <View style={{ position: "relative" }}>
-            <TextInput
-              secureTextEntry={true}
-              autoCorrect={false}
-              style={styles.textInput}
-              placeholder="demo@email.com"
-            />
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 10,
-                justifyContent: "center",
-                position: "absolute",
-                top: 10,
-              }}
-            >
-              <Image
-                source={require("../assets/icons/email.png")}
-                style={{
-                  width: 20,
-                  height: 20,
-                  resizeMode: "contain",
-                }}
-              />
-              <Text
-                style={{
-                  color: "lightgray",
-                }}
-              >
-                |
-              </Text>
-            </View>
-          </View>
-        </View>
+        <InputField
+          label={"password"}
+          autoCorrect={false}
+          secureTextEntry={false}
+          placeholder={"demo@email.com"}
+          image={email}
+        />
+        <InputField
+          label={"password"}
+          autoCorrect={false}
+          secureTextEntry={true}
+          placeholder={"********"}
+          image={lock}
+        />
         <ButtonComponent color="lightgreen" text="Login" textColor="white" />
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 10,
+            justifyContent: "center",
+            fontSize: 20,
+          }}
+        >
+          <Text>Don't have an Account ?</Text>
+          <Text style={{ color: "lightgreen" }}>Sign up</Text>
+        </View>
       </View>
     </View>
   );
@@ -89,18 +81,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
     elevation: 50,
-  },
-  textInput: {
-    height: 40,
-    borderBottomWidth: 2,
-    borderStyle: "solid",
-    borderColor: "lightgray",
-    color: "black",
-    paddingLeft: 50,
-  },
-  label: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "black",
   },
 });
