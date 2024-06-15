@@ -93,8 +93,8 @@ const styles = StyleSheet.create({
     paddingLeft: 50,
   },
   label: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 15,
+    fontWeight: "regular",
     color: "black",
   },
 });
