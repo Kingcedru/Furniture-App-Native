@@ -4,29 +4,30 @@ import React from "react";
 import ButtonComponent from "../components/ButtonComponent";
 import InputField from "../components/InputField";
 
-export default function Login({ navigation }) {
+export default function SignUp({ navigation }) {
   const lock = require("../assets/icons/lock.png");
   const email = require("../assets/icons/email.png");
+  const phone = require("../assets/icons/phone.png");
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require("../assets/headlogs1.png")}
+          source={require("../assets/headlog2.png")}
           style={{
             width: 360,
-            height: 150,
+            height: 110,
           }}
         />
-        <Text style={styles.title}>Login</Text>
+        <Text style={styles.title}>Sign up</Text>
       </View>
       <Image
-        source={require("../assets/smile-man.png")}
+        source={require("../assets/sitting.png")}
         style={{
           width: 200,
           height: 200,
           resizeMode: "contain",
           position: "absolute",
-          top: 160,
+          top: 100,
           left: 150,
           zIndex: 10,
         }}
@@ -40,26 +41,32 @@ export default function Login({ navigation }) {
           image={email}
         />
         <InputField
+          label={"Phone No"}
+          autoCorrect={false}
+          secureTextEntry={false}
+          placeholder={"+91 000-00-000"}
+          image={phone}
+        />
+        <InputField
           label={"Password"}
           autoCorrect={false}
           secureTextEntry={true}
           placeholder={"********"}
           image={lock}
         />
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
-          <View>
-            <Text>Remember Me</Text>
-          </View>
+        <InputField
+          label={"Confirm Password"}
+          autoCorrect={false}
+          secureTextEntry={true}
+          placeholder={"********"}
+          image={lock}
+        />
 
-          <Text>Forgot Passowrd</Text>
-        </View>
-        <ButtonComponent color="lightgreen" text="Login" textColor="white" />
+        <ButtonComponent
+          color="lightgreen"
+          text="Create an Account"
+          textColor="white"
+        />
         <View
           style={{
             display: "flex",
@@ -69,12 +76,12 @@ export default function Login({ navigation }) {
             fontSize: 20,
           }}
         >
-          <Text>Create an account?</Text>
+          <Text>Already have an Account !</Text>
           <Text
             style={{ color: "lightgreen" }}
-            onPress={() => navigation.navigate("SignUp")}
+            onPress={() => navigation.navigate("Login")}
           >
-            Sign up
+            Login
           </Text>
         </View>
       </View>
@@ -94,9 +101,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     position: "absolute",
-    top: 50,
+    top: 30,
     left: 150,
     fontWeight: "normal",
+    color: "white",
   },
   form: {
     position: "absolute",
@@ -104,7 +112,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    gap: 20,
+    gap: 10,
     width: "100%",
     backgroundColor: "white",
     borderTopLeftRadius: 20,
